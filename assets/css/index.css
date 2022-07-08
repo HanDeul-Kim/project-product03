@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    overflow: hidden;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.ui .modal01,
+.ui .modal02,
+.ui .modal03,
+.ui .modal04 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: rgba(255, 255, 255, 0.4);
+}
+.ui .modal01 .card,
+.ui .modal02 .card,
+.ui .modal03 .card,
+.ui .modal04 .card {
+    position: fixed;
+    top: 50%;
+    right: 3.5%;
+    width: 600px;
+    max-width: 90%;
+    /* background: rgba(0, 0, 0, 0.4); */
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 1em;
+    padding: 1.7em;
+    color:#fff;
+}
+.card h1,
+.card p,
+.card hr {
+    position: relative;
+}
+.ui .modal01 .card:before,
+.ui .modal02 .card:before,
+.ui .modal03 .card:before,
+.ui .modal04 .card:before{
+    content:'';
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+}
+.ui .modal01 .card .close,
+.ui .modal02 .card .close,
+.ui .modal03 .card .close,
+.ui .modal04 .card .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.2em 1.5em;
+    z-index: 2;
+    cursor: pointer;
+}
+.ui .modal01 .card .close a,
+.ui .modal02 .card .close a,
+.ui .modal03 .card .close a,
+.ui .modal04 .card .close a {
+    pointer-events: none;
+    color: #fff;
+}
+#font02{
+    line-height: 1.5;
+}
+.menu {
+    position: fixed;
+    top: 2.8125em;
+    right: 3.3125em;
+    z-index: 1;
+}
+.menu_img {
+    width: 35px;
+    height: 21px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 9999;
+}
+.menu_img.active {
+    opacity: 0.3;
+}
+/*     chat로고     */
+.chat-box {
+    position: absolute;
+    top: 6.25em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.chat_logo1,
+.chat_logo2 {
+    zoom: 0.2;
+    line-height: 20;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+.overlay,
+.chat-box{
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+.overlay.active,
+.chat-box.active{
+    opacity: 1;
+    visibility: visible;
+}
+footer {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    color: rgba(30, 30, 30, 1);
+    text-align: right;
+    font-size: 10px;
+    opacity: 0.5;
+}
+.box {
+    width: 34.375em;
+    height: 21.25em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    z-index: 9999;
+}
+.box_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(180, 180, 180, 1);
+    z-index: 9998;
+}
+.box,
+.box_overlay{
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+}
+.box.remove,
+.box_overlay.remove {
+    opacity: 0;
+    visibility: hidden;
+}
+.item {
+    position: absolute;
+    background: rgba(30, 30, 30, 1);
+}
+.item1 {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    animation: line1 0.5s 0.5s linear both;
+}
+.item2 {
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    animation: line2 0.5s 1s linear both;
+}
+.item3 {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    animation: line3 0.5s 1.5s linear both;
+}
+.item4 {
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    animation: line4 0.5s 2s linear both;
+}
+.text-box {
+    text-align: center;
+    color: rgba(30, 30, 30, 1);
+}
+.text-box p{
+    margin:0.25em 0;
+}
+.text-box p:nth-child(1),
+.text-box p:nth-child(2) {
+    font-size: 2.5rem;
+}
+.text-box p:nth-child(3) {
+    margin-top: 3.125em;
+}
+.text-box p:nth-child(3),
+.text-box p:nth-child(4),
+.text-box p:nth-child(5) {
+    font-size: 0.938rem;
+    line-height: 1.5625em;
+}
+.color-picker {
+    position: fixed;
+    top: 10%;
+    z-index: 10;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+#ui {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    text-align: center;
+    margin: 1em;
+    z-index: 0;
+}
+#ui .pickColors {
+    pointer-events: auto;
+    display: inline-block;
+    padding: 0.75em;
+    background: #fff;
+    color: #000;
+    border-radius: 10em;
+    margin: 1em 0.7em;
+    cursor: pointer;
+    border: 1px solid rgba(30, 30, 30, 0.5);
+}
+/*   초기 텍스트 애니메이션   */
+@keyframes line1 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes line2 {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+@keyframes line3 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+@keyframes line4 {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+    }
+}

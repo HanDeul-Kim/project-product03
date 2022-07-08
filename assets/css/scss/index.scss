@@ -1,0 +1,48 @@
+body,
+h1,
+p,
+div {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+a {
+   color: #222;
+}
+.ui {
+   .modal01,
+   .modal02,
+   .modal03,
+   .modal04 {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.15);
+      .card {
+         position: fixed;
+         top: 50%;
+         right: 3.5%;
+         width: 600px;
+         max-width: 90%;
+         background: #fff;
+         transform: translateY(-50%);
+         border-radius: 1em;
+         padding: 1.7em;
+         .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1.2em 1.5em;
+            z-index: 2;
+            cursor: pointer;
+            a {
+               pointer-events: none;
+            }
+         }
+      }
+   }
+}
